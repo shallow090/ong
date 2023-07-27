@@ -83,7 +83,7 @@ async def tg_handler(appp, TECHZ_API_KEY):
                 await del_anime(i)
                 queue.pop(0)
             except Exception as e:
-                logger.warning(str(e))
+                logger.warning(f"Error in tg_handler: {str(e)}")
                 await del_anime(i)
                 await add_to_failed(f"{i}-{q}")
                 queue.pop(0)
@@ -93,6 +93,7 @@ async def tg_handler(appp, TECHZ_API_KEY):
                 await asyncio.sleep(SLEEP_TIME)
             else:
                 await asyncio.sleep(SLEEP_TIME)
+
 
 
 async def start_uploading(app, q, l, eid):
