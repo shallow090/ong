@@ -1,5 +1,16 @@
 import asyncio
+import logging
 from AutoAnimeBot.core.log import LOGGER
+# ... (other imports)
+
+# Set the logging level to DEBUG to capture all messages
+logging.basicConfig(level=logging.DEBUG)
+
+# Rest of your code here...
+
+# Start the asyncio event loop
+asyncio.run(tg_handler(your_app, TECHZ_API_KEY))
+
 from pyrogram.types import (
     Message,
     InlineKeyboardMarkup,
