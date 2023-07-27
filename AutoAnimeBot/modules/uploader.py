@@ -6,7 +6,7 @@ from AutoAnimeBot.modules.utils import (
 )
 from AutoAnimeBot.modules.thumbnail import generate_thumbnail
 from config import COMMENTS_GROUP_LINK, INDEX_CHANNEL_USERNAME
-from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram.types import Message
 from AutoAnimeBot.modules.progress import upload_progress
 import os
 import time
@@ -31,26 +31,12 @@ async def upload_video(app, msg, file, id, tit, title, eid):
             id, file, tit, ep_num, size, format_time(duration)
         )
         tags = tags_generator(tit)
-        buttons = InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        text="Info", url=f"https://t.me/{INDEX_CHANNEL_USERNAME}"
-                    ),
-                    InlineKeyboardButton(text="Comments", url=COMMENTS_GROUP_LINK),
-                ]
-            ]
-        )
         caption = f"🎥 **{title}**\n\n{tags}"
-        video = await app.send_video(
+        await app.send_video_note(
             app.UPLOADS_CHANNEL_ID,
-            file,
-            caption=caption,
-            duration=duration,
-            width=w,
-            height=h,
+            video_note=file,
             thumb=thumbnail,
-            reply_markup=buttons,
+            duration=duration,
             file_name=os.path.basename(file),
             progress=upload_progress,
             progress_args=(title, msg, logger),
@@ -71,4 +57,4 @@ async def upload_video(app, msg, file, id, tit, title, eid):
     except Exception as e:
         logger.warning(str(e))
 
-    return video.id
+    return  # You can return something meaningful here if needed, or just remove the return statement.
