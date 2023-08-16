@@ -1,4 +1,7 @@
 {
+   "stack": "heroku-20"
+}
+{
     "name": "AutoAnimeBot",
     "description": "Telegram Bot To Automate Your Anime Channels",
     "repository": "https://github.com/shallow090/ong",
