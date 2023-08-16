@@ -149,7 +149,6 @@ async def channel_handler(video_id, anime_id, name, ep_num, quality):
             dl = await app.send_message(
                 app.INDEX_CHANNEL_ID,
                 EPITEXT.format(link),
-                disable_web=True,
             )
             await app.send_sticker(
                 app.INDEX_CHANNEL_ID,
@@ -180,7 +179,6 @@ async def channel_handler(video_id, anime_id, name, ep_num, quality):
                     dl = await app.send_message(
                         app.INDEX_CHANNEL_ID,
                         EPITEXT.format(x),
-                        disable_web_page_preview=True,
                         reply_to_message_id=post,
                     )
                     dl_id = int(dl.id)
@@ -192,7 +190,6 @@ async def channel_handler(video_id, anime_id, name, ep_num, quality):
                         app.INDEX_CHANNEL_ID,
                         dl_id,
                         EPITEXT.format(text),
-                        disable_web_page_preview=True,
                     )
 
         main_id = dl_id
