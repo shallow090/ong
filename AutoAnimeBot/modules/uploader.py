@@ -6,7 +6,7 @@ import time
 from AutoAnimeBot.core.log import LOGGER
 from AutoAnimeBot.modules.progress import t1, dcount
 from AutoAnimeBot.modules.utils import get_duration
-
+from AutoAnimeBot.modules.utils import get_filesize
 logger = LOGGER("Uploader")
 
 
