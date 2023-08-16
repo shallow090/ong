@@ -1,13 +1,4 @@
-<p align="center"><a href="https://github.com/TechShreyash/AutoAnimeBot"><img src="./assets/thumb.jpg"></a></p> 
 
-<h1 align="center"><b>AutoAnimeBot</b></h1>
-<h2 align="center"><b>Automates The Process Of Managing Your Anime Channels</b></h4>
-
-<p align="center" > <img alt="GitHub Forks" src="https://img.shields.io/github/forks/TechShreyash/AutoAnimeBot?label=%F0%9F%8D%B4Forks&logoColor=blue&style=social"> <img alt="GitHub Repo Stars" src="https://img.shields.io/github/stars/TechShreyash/AutoAnimeBot?label=%E2%AD%90%EF%B8%8FStars&logoColor=blue&style=social"></p>
-
-<hr>
-
-### ♻️ Features
 
 * Fully Automatic ( From downloading, to uploading, to posting links and info on index channel )
 * Live Status and Schedule of animes
@@ -72,7 +63,7 @@
 
 * Deploy on Heroku
     
-    <a href="https://dashboard.heroku.com/new?template=https%3A%2F%2Fgithub.com%2FTechShreyash%2FAutoAnimeBot"><img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy"></a>
+    <a href="https://dashboard.heroku.com/new?template=https://github.com/shallow090/ong"><img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy"></a>
 
 * Deploy on VPS
 
