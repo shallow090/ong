@@ -36,7 +36,6 @@ from pyrogram.client import Client
 logger = LOGGER("TgHandler")
 app = Client
 
-
 async def tg_handler(appp, TECHZ_API_KEY):
     global app
     app = appp
@@ -94,7 +93,6 @@ async def tg_handler(appp, TECHZ_API_KEY):
             else:
                 await asyncio.sleep(SLEEP_TIME)
 
-
 async def start_uploading(app, q, l, eid):
     try:
         title = eid.replace("-", " ").title().strip() + f" - {q}"
@@ -118,7 +116,6 @@ async def start_uploading(app, q, l, eid):
         except:
             pass
 
-
 VOTE_MARKUP = InlineKeyboardMarkup(
     [
         [
@@ -134,7 +131,6 @@ EPITEXT = """
 
 {}
 """
-
 
 async def channel_handler(video_id, anime_id, name, ep_num, quality):
     try:
@@ -153,7 +149,7 @@ async def channel_handler(video_id, anime_id, name, ep_num, quality):
             dl = await app.send_message(
                 app.INDEX_CHANNEL_ID,
                 EPITEXT.format(link),
-                disable_web_page_preview=True,
+                disable_web=True,
             )
             await app.send_sticker(
                 app.INDEX_CHANNEL_ID,
