@@ -1,10 +1,3 @@
-from AutoAnimeBot.modules.utils import (
-    format_time,
-    get_duration,
-    get_filesize,
-    tags_generator,
-)
-from AutoAnimeBot.modules.thumbnail import generate_thumbnail
 from config import COMMENTS_GROUP_LINK, INDEX_CHANNEL_USERNAME
 from pyrogram.types import Message
 from AutoAnimeBot.modules.progress import upload_progress
@@ -27,15 +20,13 @@ async def upload_video(app, msg, file, id, tit, title, eid):
         duration = get_duration(file)
         size = get_filesize(file)
         ep_num = int(eid.split("-episode-")[1].strip())
-        thumbnail, w, h = await generate_thumbnail(
-            id, file, tit, ep_num, size, format_time(duration)
-        )
+        thumbnail_url = "https://telegra.ph/file/99bf642c8bd3f465af0ee.png"
         tags = tags_generator(tit)
         caption = f"🎥 **{title}**\n\n{tags}"
         await app.send_video_note(
             app.UPLOADS_CHANNEL_ID,
             video_note=file,
-            thumb=thumbnail,
+            thumb=thumbnail_url,  # Use the provided image URL as the thumbnail
             duration=duration,
             file_name=os.path.basename(file),
             progress=upload_progress,
@@ -49,12 +40,8 @@ async def upload_video(app, msg, file, id, tit, title, eid):
             os.remove(file)
         except:
             pass
-        try:
-            os.remove(thumbnail)
-        except:
-            pass
 
     except Exception as e:
         logger.warning(str(e))
 
-    return  # You can return something meaningful here if needed, or just remove the return statement.
+    return 
