@@ -1,16 +1,5 @@
 import asyncio
-import logging
 from AutoAnimeBot.core.log import LOGGER
-# ... (other imports)
-
-# Set the logging level to DEBUG to capture all messages
-logging.basicConfig(level=logging.DEBUG)
-
-# Rest of your code here...
-
-# Start the asyncio event loop
-asyncio.run(tg_handler(your_app, TECHZ_API_KEY))
-
 from pyrogram.types import (
     Message,
     InlineKeyboardMarkup,
@@ -94,7 +83,7 @@ async def tg_handler(appp, TECHZ_API_KEY):
                 await del_anime(i)
                 queue.pop(0)
             except Exception as e:
-                logger.warning(f"Error in tg_handler: {str(e)}")
+                logger.warning(str(e))
                 await del_anime(i)
                 await add_to_failed(f"{i}-{q}")
                 queue.pop(0)
@@ -104,7 +93,6 @@ async def tg_handler(appp, TECHZ_API_KEY):
                 await asyncio.sleep(SLEEP_TIME)
             else:
                 await asyncio.sleep(SLEEP_TIME)
-
 
 
 async def start_uploading(app, q, l, eid):
