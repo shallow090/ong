@@ -5,6 +5,7 @@ import os
 import time
 from AutoAnimeBot.core.log import LOGGER
 from AutoAnimeBot.modules.progress import t1, dcount
+from AutoAnimeBot.modules.utils import get_duration
 
 logger = LOGGER("Uploader")
 
